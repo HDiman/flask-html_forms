@@ -8,11 +8,11 @@
 </head>
 <body>
     <h1>Insert text:</h1>
-    <form action="/action_page.php" method="post" target="_blank">
+    <form action="{{ url_for('login') }}" method="post">
         <label for="input_name">Name:</label>
-        <input type="text" id="input_name" name="input_name" placeholder="name">
+        <input type="text" id="input_name" name="username" placeholder="name">
         <label for="input_password">Password:</label>
-        <input type="text" id="input_password" name="input_password" placeholder="password">
+        <input type="text" id="input_password" name="password" placeholder="password">
 <!--        <button type="button">Ok</button>-->
         <input type="submit">
     </form>

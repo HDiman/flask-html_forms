@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for, request
 
 app = Flask(__name__)
 
@@ -6,10 +6,11 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
-@app.route("/login")
-def get_inside(name, password):
-    return render_template("enter.html")
-
+@app.route('/login', methods=['POST'])
+def login():
+    get_username = request.form['username']
+    get_password = request.form['password']
+    return render_template('login.html', username=get_username, password=get_password)
 
 
 if __name__ == "__main__":
